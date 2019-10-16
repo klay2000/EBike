@@ -1,3 +1,11 @@
-# Ebike Software
+# Ebike
 
-This repo is for the software that controls my ebike.
+This repo contains the software and CAD files for my ebike.
+
+## Software
+
+All the software is currently written in arduino.
+
+## CAD
+
+All my CAD is currently made in Fusion360, I plan to switch it to OpenSCAD though.
