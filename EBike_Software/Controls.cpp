@@ -18,6 +18,8 @@ Controls* Controls::getInstance(){
 
 float Controls::getThrottle(){
   float unconstrained = (analogRead(THROTTLE_PIN) - THROTTLE_MIN)/(float)(THROTTLE_MAX-THROTTLE_MIN);
+
+  if(unconstrained < THROTTLE_DEADBAND) unconstrained = 0.0f;
   
   return constrain(unconstrained, 0.0f, 1.0f);
 }

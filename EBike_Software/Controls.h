@@ -13,6 +13,8 @@ class Controls{
     const int THROTTLE_MIN = 1090;
     const int THROTTLE_MAX = 3200;
 
+    const float THROTTLE_DEADBAND = 0.05f;
+
     const int STICK_X_MIN = 700;
     const int STICK_X_MAX = 3400;
 

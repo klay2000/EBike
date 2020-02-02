@@ -1,37 +1,44 @@
-#include <MapleFreeRTOS900.h>
 #include "Controls.h"
 #include "Drive.h"
+#include "Scheduler.h"
+#include "Screen.h"
 
-static void vTestTask(void* pvParameters){
+bool t = true;
+Controls* i;
+Drive* d;
 
-  Controls* i = Controls::getInstance();
-  
-  while(true){
-    Serial.println("Throttle: " + String(i->getThrottle()) + "\nX: " + String(i->getStickX()) + "\nY: " + String(i->getStickY()));
-  }
+static void testTaskStart(){
+    pinMode(PA10, OUTPUT);
 }
 
-void setup() {
+static void testTask()
+{
+
+  Serial.println(Controls::getInstance()->getThrottle());
+//  t = !t;
+//  if(t) digitalWrite(PA10, HIGH);
+//  else  digitalWrite(PA10, LOW);
+}
+
+Scheduler* scheduler;
+
+void setup()
+{
+  i = Controls::getInstance();
+
+  d = Drive::getInstance();
+      
+  scheduler = Scheduler::getInstance();
+
   Serial.begin(115200);
-  while(!Serial){;}
-  Serial.println("Starting up.");
-  
-  xTaskCreate(vTestTask,
-  "TestTask",
-  configMINIMAL_STACK_SIZE,
-  NULL,
-  tskIDLE_PRIORITY + 2,
-  NULL);
-  
-  xTaskCreate(Drive::vDriveTask,
-  "DriveTask",
-  configMINIMAL_STACK_SIZE,
-  NULL,
-  tskIDLE_PRIORITY + 2,
-  NULL);
-  
-  vTaskStartScheduler();
+
+  scheduler->addTask(new Task(&testTaskStart, &testTask, 100));
+  scheduler->addTask(new Task(&Drive::task, &Drive::task, 1));
 }
 
-void loop() {
+void loop()
+{
+
+  Screen::getInstance()->fillScreen(0xFF90);
+  scheduler->tick();
 }

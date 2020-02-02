@@ -5,9 +5,7 @@
 Drive* Drive::instance;
 
 Drive::Drive(){
-  Serial2.begin(19200);
-  
-  while(!Serial2){;}
+  Serial2.begin(115200);
   
   ESC.setSerialPort(&Serial2);
 }
@@ -19,13 +17,10 @@ Drive* Drive::getInstance(){
   return instance;
 }
 
-void Drive::vDriveTask(void* pvParameters){
-    Drive* thisInstance = getInstance();
-    Controls* controls = Controls::getInstance();
+void Drive::task(){
+    float amps = Controls::getInstance()->getThrottle()*MAX_CURRENT;
     
-    while(true){
-      thisInstance->ESC.setCurrent(controls->getThrottle()*MAX_CURRENT);
-    }
+    instance->setAmps(amps);
 }
 
 float Drive::getAmps(){
@@ -39,4 +34,8 @@ float Drive::getVolts(){
 
 long Drive::getRPM(){
   return ESC.data.rpm;
+}
+
+void Drive::setAmps(float a){
+  ESC.setCurrent(constrain(a, 0, MAX_CURRENT));
 }
