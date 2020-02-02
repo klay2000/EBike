@@ -2,6 +2,7 @@
 #include "Drive.h"
 #include "Scheduler.h"
 #include "Screen.h"
+#include "Auth.h"
 
 bool t = true;
 Controls* i;
@@ -14,7 +15,7 @@ static void testTaskStart(){
 static void testTask()
 {
 
-  Serial.println(Controls::getInstance()->getThrottle());
+  //Serial.println(Controls::getInstance()->getThrottle());
 //  t = !t;
 //  if(t) digitalWrite(PA10, HIGH);
 //  else  digitalWrite(PA10, LOW);
@@ -39,6 +40,6 @@ void setup()
 void loop()
 {
 
-  Screen::getInstance()->fillScreen(0xFF90);
+  Serial.println(Auth::getInstance()->isKey());
   scheduler->tick();
 }

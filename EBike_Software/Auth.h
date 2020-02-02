@@ -19,7 +19,8 @@ class Auth{
     static Auth* getInstance();
     
     bool isNewCard();
-    String readCardUID();
+    bool isCardRead();
+    String cardUID();
     
     bool isKey();
 };
