@@ -1,32 +1,29 @@
-#include "Auth.h"
+#include "CardReader.h"
 #include <Arduino.h>
 #include <MFRC522.h>
 
-Auth* Auth::instance;
+CardReader* CardReader::instance;
 
-Auth* Auth::getInstance(){
-  if(instance == 0) instance = new Auth();
+CardReader* CardReader::getInstance(){
+  if(instance == 0) instance = new CardReader();
   return instance;
 }
 
-Auth::Auth(){
-  pinMode(KEY_PIN, INPUT_PULLUP);
-
-  
+CardReader::CardReader(){
   mfrc = new MFRC522(MFRC_CS_PIN, -1, MFRC_SPI);
 
   mfrc->PCD_Init();
 }
 
-bool Auth::isNewCard(){
+bool CardReader::isNewCard(){
   return mfrc->PICC_IsNewCardPresent();
 }
 
-bool Auth::isCardRead(){
+bool CardReader::isCardRead(){
   return mfrc->PICC_ReadCardSerial();
 }
 
-String Auth::cardUID(){
+String CardReader::cardUID(){
   String value = "";
   
   for(int i = 0; i < mfrc->uid.size; i++){
@@ -35,8 +32,4 @@ String Auth::cardUID(){
 
   return value;
 
-}
-
-bool Auth::isKey(){
-  return digitalRead(KEY_PIN)==LOW;
 }

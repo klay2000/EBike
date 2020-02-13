@@ -4,7 +4,7 @@
 Screen* Screen::instance;
 
 Screen::Screen(){
-  spi2 = new SPIClass(SCREEN_SPI);
+  spi2 = new SPIClass(2);
 
   screen = new Adafruit_ILI9341_STM(SCREEN_CS_PIN, SCREEN_DC_PIN);
 

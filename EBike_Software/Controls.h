@@ -9,6 +9,8 @@ class Controls{
     const int THROTTLE_PIN = PA5;
     const int STICK_X_PIN = PA6;
     const int STICK_Y_PIN = PA7;
+    const int KEY_PIN = PB8;
+    const int HEADLIGHT_PIN = -1; //placeholder
 
     const int THROTTLE_MIN = 1090;
     const int THROTTLE_MAX = 3200;
@@ -32,6 +34,8 @@ class Controls{
     float getThrottle();
     float getStickX();
     float getStickY();
+    bool isKey();
+    bool isHeadlight();
   
 };
 

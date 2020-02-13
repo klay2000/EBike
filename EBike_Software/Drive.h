@@ -5,6 +5,7 @@
 #define DRIVE
 
 class Drive{
+  
   private:
     static const int MAX_CURRENT = 30.0f;
 

@@ -2,7 +2,7 @@
 #include "Drive.h"
 #include "Scheduler.h"
 #include "Screen.h"
-#include "Auth.h"
+#include "CardReader.h"
 
 bool t = true;
 Controls* i;
@@ -40,6 +40,5 @@ void setup()
 void loop()
 {
 
-  Serial.println(Auth::getInstance()->isKey());
   scheduler->tick();
 }

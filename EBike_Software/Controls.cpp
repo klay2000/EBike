@@ -7,6 +7,8 @@ Controls::Controls(){
   pinMode(THROTTLE_PIN, INPUT_ANALOG);
   pinMode(STICK_X_PIN, INPUT_ANALOG);
   pinMode(STICK_Y_PIN, INPUT_ANALOG);
+  pinMode(KEY_PIN, INPUT_PULLUP);
+  pinMode(HEADLIGHT_PIN, INPUT_PULLUP);
 }
 
 Controls* Controls::getInstance(){
@@ -38,4 +40,12 @@ float Controls::getStickY(){
   if(abs(unconstrained) < STICK_DEADBAND) return 0;
   
   return constrain(unconstrained, -1.0f, 1.0f);
+}
+
+bool Controls::isKey(){
+  return digitalRead(KEY_PIN);
+}
+
+bool Controls::isHeadlight(){
+  return digitalRead(HEADLIGHT_PIN);
 }

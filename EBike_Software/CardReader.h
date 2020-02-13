@@ -1,28 +1,25 @@
-#ifndef AUTH
-#define AUTH
+#ifndef CARDREADER
+#define CARDREADER
 
 #include <MFRC522.h>
 
-class Auth{
+class CardReader{
   
   private:
     const int MFRC_CS_PIN = PB5;
     const int MFRC_SPI = 2;
-    const int KEY_PIN = PB8;
 
     MFRC522* mfrc;
 
-    static Auth* instance;
-    Auth();
+    static CardReader* instance;
+    CardReader();
 
   public:
-    static Auth* getInstance();
+    static CardReader* getInstance();
     
     bool isNewCard();
     bool isCardRead();
     String cardUID();
-    
-    bool isKey();
 };
 
 #endif
