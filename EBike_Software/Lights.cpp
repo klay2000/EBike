@@ -18,3 +18,18 @@ Lights* Lights::getInstance(){
   return instance;
 }
 
+void Lights::setHeadlight(bool i){
+  digitalWrite(HEADLIGHT_PIN, i);
+}
+
+void Lights::setRed(float i){
+  analogWrite(RED_PIN, (i*255)(int));
+}
+
+void Lights::setGreen(float i){
+  analogWrite(GREEN_PIN, (i*255)(int));
+}
+
+void Lights::setBlue(float i){
+  analogWrite(BLUE_PIN, (i*255)(int));
+}
