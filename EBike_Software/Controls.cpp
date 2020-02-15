@@ -42,10 +42,10 @@ float Controls::getStickY(){
   return constrain(unconstrained, -1.0f, 1.0f);
 }
 
-bool Controls::isKey(){
-  return digitalRead(KEY_PIN);
+bool Controls::getKey(){
+  return digitalRead(KEY_PIN)==LOW;
 }
 
-bool Controls::isHeadlight(){
-  return digitalRead(HEADLIGHT_PIN);
+bool Controls::getHeadlight(){
+  return digitalRead(HEADLIGHT_PIN)==LOW;
 }

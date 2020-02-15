@@ -34,8 +34,8 @@ class Controls{
     float getThrottle();
     float getStickX();
     float getStickY();
-    bool isKey();
-    bool isHeadlight();
+    bool getKey();
+    bool getHeadlight();
   
 };
 
