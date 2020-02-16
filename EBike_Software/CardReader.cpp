@@ -18,8 +18,7 @@ CardReader::CardReader(){
 bool CardReader::isNewCard(){
   return mfrc->PICC_IsNewCardPresent();
 }
-
-bool CardReader::isCardRead(){
+bool CardReader::readCard(){
   return mfrc->PICC_ReadCardSerial();
 }
 
@@ -29,6 +28,8 @@ String CardReader::cardUID(){
   for(int i = 0; i < mfrc->uid.size; i++){
     value.concat(String(mfrc->uid.uidByte[i], HEX));
   }
+
+  mfrc->PICC_HaltA();
 
   return value;
 

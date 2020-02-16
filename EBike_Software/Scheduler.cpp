@@ -1,7 +1,7 @@
 #include "scheduler.h"
 #include "arduino.h"
 
-Task::Task(void l(), void r(), unsigned long i)
+Task::Task(void l(void*), void r(void*), unsigned long i)
 {
   this->launch = *l;
 
@@ -35,7 +35,7 @@ void Scheduler::tick()
 
   if (taskRunTimes[indexToRun] <= millis())
   {
-    tasks[indexToRun]->repeat();
+    tasks[indexToRun]->repeat(0);
     taskRunTimes[indexToRun] = millis() + tasks[indexToRun]->interval;
   }
 }
@@ -47,7 +47,7 @@ void Scheduler::addTask(Task *task)
 
   taskRunTimes[numOfTasks] = millis();
 
-  tasks[numOfTasks]->launch();
+  tasks[numOfTasks]->launch(0);
 
   ++numOfTasks;
 }

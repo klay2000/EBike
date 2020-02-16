@@ -18,7 +18,7 @@ class CardReader{
     static CardReader* getInstance();
     
     bool isNewCard();
-    bool isCardRead();
+    bool readCard();
     String cardUID();
 };
 

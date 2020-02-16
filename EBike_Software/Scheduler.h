@@ -8,10 +8,10 @@ struct Task
 
   unsigned long interval;
 
-  void (*launch)();
-  void (*repeat)();
+  void (*launch)(void*);
+  void (*repeat)(void*);
 
-  Task(void l(), void r(), unsigned long i);
+  Task(void l(void*), void r(void*), unsigned long i);
 };
 
 class Scheduler

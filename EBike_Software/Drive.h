@@ -7,7 +7,6 @@
 class Drive{
   
   private:
-    static const int MAX_CURRENT = 30.0f;
 
     VescUart ESC;
   
@@ -16,9 +15,9 @@ class Drive{
     
   public:
 
-    static Drive* getInstance();
+    static const int MAX_CURRENT = 30.0f;
 
-    static void task();
+    static Drive* getInstance();
 
     void setAmps(float a);
 

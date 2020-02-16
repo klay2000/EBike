@@ -17,12 +17,6 @@ Drive* Drive::getInstance(){
   return instance;
 }
 
-void Drive::task(){
-    float amps = Controls::getInstance()->getThrottle()*MAX_CURRENT;
-    
-    instance->setAmps(amps);
-}
-
 float Drive::getAmps(){
   return ESC.data.avgInputCurrent;
 }

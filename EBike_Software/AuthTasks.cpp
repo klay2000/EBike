@@ -5,27 +5,35 @@
 
 AuthTasks* AuthTasks::instance;
 
+String AuthTasks::cardUID;
+
+bool AuthTasks::cardAuth;
+
 AuthTasks* AuthTasks::getInstance(){
   if(instance == 0) instance = new AuthTasks();
 }
 
 AuthTasks::AuthTasks(){
+  cardUID = "99f6fcb9";
+  
+  cardAuth = false;
 }
+
 
 bool AuthTasks::isAuthenticated(){
-  if(cardAuth == true) return true;
-  else return false;
+  return cardAuth || Controls::getInstance()->getKey();
 }
 
-void AuthTasks::authTaskStart(){}
+void AuthTasks::authTaskStart(void*){}
 
-void AuthTasks::authTask(){
-  if(
-    CardReader::getInstance()->isNewCard() &&
-    CardReader::getInstance()->isCardRead()&&
-    CardReader::getInstance()->cardUID().equals(getInstance()->cardUID)){
+void AuthTasks::authTask(void*){
+  
+  if(!CardReader::getInstance()->isNewCard()) return;
 
-//      getInstance()->cardAuth = !getInstance()->cardAuth;
+  if(!CardReader::getInstance()->readCard()) return;
+     
+  if(CardReader::getInstance()->cardUID().equals(getInstance()->cardUID)) cardAuth = !cardAuth;
 
-  }
+
+
 }
