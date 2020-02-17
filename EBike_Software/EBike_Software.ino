@@ -52,5 +52,12 @@ void setup()
 void loop()
 {
 
+  Screen::getInstance()->setColor(0xffff);
+  Screen::getInstance()->fillScreen();
+
+  Screen::getInstance()->setColor(0);
+
+  Screen::getInstance()->drawLine(0, 0, 100, 100);
+
   scheduler->tick();
 }
