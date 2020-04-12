@@ -28,11 +28,11 @@ void AuthTasks::authTaskStart(void*){}
 
 void AuthTasks::authTask(void*){
   
-  if(!CardReader::getInstance()->isNewCard()) return;
+//  if(!CardReader::getInstance()->isNewCard()) return;
 
-  if(!CardReader::getInstance()->readCard()) return;
+//  if(!CardReader::getInstance()->readCard()) return;
      
-  if(CardReader::getInstance()->cardUID().equals(getInstance()->cardUID)) cardAuth = !cardAuth;
+//  if(CardReader::getInstance()->cardUID().equals(getInstance()->cardUID)) cardAuth = !cardAuth;
 
 
 
