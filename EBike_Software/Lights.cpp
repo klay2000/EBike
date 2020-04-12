@@ -23,13 +23,13 @@ void Lights::setHeadlight(bool i){
 }
 
 void Lights::setRed(float i){
-  analogWrite(RED_PIN, (int)(i*255));
+//  analogWrite(RED_PIN, (int)(i*255));
 }
 
 void Lights::setGreen(float i){
-  analogWrite(GREEN_PIN, (int)(i*255));
+//  analogWrite(GREEN_PIN, (int)(i*255));
 }
 
 void Lights::setBlue(float i){
-  analogWrite(BLUE_PIN, (int)(i*255));
+//  analogWrite(BLUE_PIN, (int)(i*255));
 }

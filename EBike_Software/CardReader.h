@@ -1,15 +1,17 @@
 #ifndef CARDREADER
 #define CARDREADER
 
-#include <MFRC522.h>
+//#include <MFRC522.h>
+
+#include "string.h"
 
 class CardReader{
   
   private:
-    const int MFRC_CS_PIN = PB5;
+    const int MFRC_CS_PIN = 14;
     const int MFRC_SPI = 2;
 
-    MFRC522* mfrc;
+//    MFRC522* mfrc;
 
     static CardReader* instance;
     CardReader();
@@ -19,7 +21,7 @@ class CardReader{
     
     bool isNewCard();
     bool readCard();
-    String cardUID();
+//    String cardUID();
 };
 
 #endif
