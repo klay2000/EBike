@@ -1,12 +1,12 @@
 #include "Controls.h"
 #include <Arduino.h>
+#include "IOExpander.h"
 
 Controls* Controls::instance;
 
 Controls::Controls(){
-//  pinMode(THROTTLE_PIN, INPUT_ANALOG);
-  pinMode(KEY_PIN, INPUT_PULLUP);
-  pinMode(HEADLIGHT_PIN, INPUT_PULLUP);
+  IOExpander::getInstance()->setPinDir(KEY_PIN, 1);
+  IOExpander::getInstance()->setPinDir(HEADLIGHT_PIN, 1);
 }
 
 Controls* Controls::getInstance(){
@@ -25,9 +25,9 @@ float Controls::getThrottle(){
 }
 
 bool Controls::getKey(){
-  return digitalRead(KEY_PIN)==LOW;
+  return !IOExpander::getInstance()->readPin(KEY_PIN);
 }
 
 bool Controls::getHeadlight(){
-  return digitalRead(HEADLIGHT_PIN)==LOW;
+  return !IOExpander::getInstance()->readPin(HEADLIGHT_PIN);
 }

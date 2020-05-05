@@ -1,13 +1,22 @@
 #include <Arduino.h>
 #include "Lights.h"
+#include "Bluetooth.h"
+#include "IOExpander.h"
 
 Lights* Lights::instance;
 
 Lights::Lights(){
-  pinMode(RED_PIN, OUTPUT);
-  pinMode(GREEN_PIN, OUTPUT);
-  pinMode(BLUE_PIN, OUTPUT);
-  pinMode(HEADLIGHT_PIN, OUTPUT);
+
+  ledcSetup(RED_CH, LED_FREQ, LED_RES);
+  ledcAttachPin(RED_PIN, RED_CH);
+
+  ledcSetup(GREEN_CH, LED_FREQ, LED_RES);
+  ledcAttachPin(GREEN_PIN, GREEN_CH);
+
+  ledcSetup(BLUE_CH, LED_FREQ, LED_RES);
+  ledcAttachPin(BLUE_PIN, BLUE_CH);
+
+  IOExpander::getInstance()->setPinDir(HEADLIGHT_PIN, 0);
 }
 
 Lights* Lights::getInstance(){
@@ -19,17 +28,17 @@ Lights* Lights::getInstance(){
 }
 
 void Lights::setHeadlight(bool i){
-  digitalWrite(HEADLIGHT_PIN, i);
+  IOExpander::getInstance()->writePin(HEADLIGHT_PIN, i);
 }
 
 void Lights::setRed(float i){
-//  analogWrite(RED_PIN, (int)(i*255));
+  ledcWrite(RED_CH, (int)(i*1024));
 }
 
 void Lights::setGreen(float i){
-//  analogWrite(GREEN_PIN, (int)(i*255));
+  ledcWrite(GREEN_CH, (int)(i*1024));
 }
 
 void Lights::setBlue(float i){
-//  analogWrite(BLUE_PIN, (int)(i*255));
+  ledcWrite(BLUE_CH, (int)(i*1024));
 }

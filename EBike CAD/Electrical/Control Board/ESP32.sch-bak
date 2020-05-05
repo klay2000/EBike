@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 5
+Sheet 3 4
 Title ""
 Date ""
 Rev ""
@@ -57,14 +57,6 @@ Wire Wire Line
 	4400 2150 4950 2150
 Text GLabel 4950 2150 2    50   Input ~ 0
 3v3
-Text GLabel 3700 2350 0    50   Input ~ 0
-RTS
-Text GLabel 3700 2450 0    50   Input ~ 0
-DTR
-Text GLabel 5100 3250 2    50   Input ~ 0
-RXD
-Text GLabel 5100 3150 2    50   Input ~ 0
-TXD
 Text GLabel 3700 3450 0    50   Input ~ 0
 SCK
 Text GLabel 3700 3550 0    50   Input ~ 0
@@ -115,12 +107,12 @@ $EndComp
 $Comp
 L power:GND #PWR08
 U 1 1 5E6715FF
-P 3200 1000
-F 0 "#PWR08" H 3200 750 50  0001 C CNN
-F 1 "GND" H 3205 827 50  0000 C CNN
-F 2 "" H 3200 1000 50  0001 C CNN
-F 3 "" H 3200 1000 50  0001 C CNN
-	1    3200 1000
+P 3200 1050
+F 0 "#PWR08" H 3200 800 50  0001 C CNN
+F 1 "GND" H 3205 877 50  0000 C CNN
+F 2 "" H 3200 1050 50  0001 C CNN
+F 3 "" H 3200 1050 50  0001 C CNN
+	1    3200 1050
 	1    0    0    -1  
 $EndComp
 Text GLabel 3100 1000 3    50   Input ~ 0
@@ -129,10 +121,8 @@ Text Label 3000 1300 1    50   ~ 0
 Throttle
 Wire Wire Line
 	3000 1000 3000 1300
-Text Label 5400 3550 2    50   ~ 0
+Text Label 5500 3550 2    50   ~ 0
 Throttle
-Wire Wire Line
-	5100 3550 5400 3550
 Text GLabel 5100 3750 2    50   Input ~ 0
 IOExpanderCS
 $Comp
@@ -260,4 +250,135 @@ F 3 "" H 2800 4250 50  0001 C CNN
 	1    2800 4250
 	0    -1   -1   0   
 $EndComp
+Text GLabel 3550 1950 1    50   Input ~ 0
+3v3
+$Comp
+L Switch:SW_Push SW1
+U 1 1 5E94724B
+P 3200 2350
+F 0 "SW1" H 3200 2635 50  0000 C CNN
+F 1 "SW_Push" H 3200 2544 50  0000 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 3200 2550 50  0001 C CNN
+F 3 "~" H 3200 2550 50  0001 C CNN
+	1    3200 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5EB2B819
+P 2850 2350
+F 0 "#PWR0101" H 2850 2100 50  0001 C CNN
+F 1 "GND" V 2855 2222 50  0000 R CNN
+F 2 "" H 2850 2350 50  0001 C CNN
+F 3 "" H 2850 2350 50  0001 C CNN
+	1    2850 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5EB2C629
+P 3550 2200
+F 0 "R4" H 3620 2246 50  0000 L CNN
+F 1 "10k" H 3620 2155 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3480 2200 50  0001 C CNN
+F 3 "~" H 3550 2200 50  0001 C CNN
+	1    3550 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 2050 3550 1950
+Wire Wire Line
+	3550 2350 3700 2350
+Wire Wire Line
+	3550 2350 3400 2350
+Connection ~ 3550 2350
+Wire Wire Line
+	2850 2350 3000 2350
+$Comp
+L Device:Jumper_NO_Small JP1
+U 1 1 5EB35BA4
+P 6000 900
+F 0 "JP1" H 6000 1085 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 6000 994 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 6000 900 50  0001 C CNN
+F 3 "~" H 6000 900 50  0001 C CNN
+	1    6000 900 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3700 2450 3300 2450
+Text Label 3300 2450 0    50   ~ 0
+BOOT
+Text Label 6000 1200 1    50   ~ 0
+BOOT
+Wire Wire Line
+	6000 1200 6000 1000
+Wire Wire Line
+	6000 800  6000 700 
+$Comp
+L power:GND #PWR0102
+U 1 1 5EB3FCF7
+P 6000 700
+F 0 "#PWR0102" H 6000 450 50  0001 C CNN
+F 1 "GND" H 6005 527 50  0000 C CNN
+F 2 "" H 6000 700 50  0001 C CNN
+F 3 "" H 6000 700 50  0001 C CNN
+	1    6000 700 
+	-1   0    0    1   
+$EndComp
+$Comp
+L dk_Rectangular-Connectors-Headers-Male-Pins:0022232041 J7
+U 1 1 5EB4447C
+P 6800 900
+F 0 "J7" H 6712 862 50  0000 R CNN
+F 1 "0022232041" H 6712 953 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 7000 1100 60  0001 L CNN
+F 3 "https://www.molex.com/pdm_docs/sd/022232041_sd.pdf" H 7000 1200 60  0001 L CNN
+F 4 "WM4202-ND" H 7000 1300 60  0001 L CNN "Digi-Key_PN"
+F 5 "0022232041" H 7000 1400 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 7000 1500 60  0001 L CNN "Category"
+F 7 "Rectangular Connectors - Headers, Male Pins" H 7000 1600 60  0001 L CNN "Family"
+F 8 "https://www.molex.com/pdm_docs/sd/022232041_sd.pdf" H 7000 1700 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/molex/0022232041/WM4202-ND/26671" H 7000 1800 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN HEADER VERT 4POS 2.54MM" H 7000 1900 60  0001 L CNN "Description"
+F 11 "Molex" H 7000 2000 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 7000 2100 60  0001 L CNN "Status"
+	1    6800 900 
+	-1   0    0    1   
+$EndComp
+Text Label 5350 3250 2    50   ~ 0
+RXD
+Text Label 5350 3150 2    50   ~ 0
+TXD
+Wire Wire Line
+	3200 1050 3200 1000
+Wire Wire Line
+	6500 1000 6500 1150
+Wire Wire Line
+	6600 1000 6600 1150
+Text GLabel 6700 1000 3    50   Input ~ 0
+3v3
+$Comp
+L power:GND #PWR0103
+U 1 1 5EB4A2D8
+P 6800 1050
+F 0 "#PWR0103" H 6800 800 50  0001 C CNN
+F 1 "GND" H 6805 877 50  0000 C CNN
+F 2 "" H 6800 1050 50  0001 C CNN
+F 3 "" H 6800 1050 50  0001 C CNN
+	1    6800 1050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 1000 6800 1050
+Text Label 6500 1150 1    50   ~ 0
+RXD
+Text Label 6600 1150 1    50   ~ 0
+TXD
+Wire Wire Line
+	5100 3550 5500 3550
+Wire Wire Line
+	5100 3250 5350 3250
+Wire Wire Line
+	5350 3150 5100 3150
 $EndSCHEMATC
