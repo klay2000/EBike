@@ -1,5 +1,4 @@
 (sym_lib_table
-  (lib (name TL2575HV-33IKTTR)(type Legacy)(uri "C:/Users/motok/Documents/Ebike Board/2020-03-02_21-33-05.lib")(options "")(descr ""))
   (lib (name dk_Addressable-Specialty)(type Legacy)(uri ${KIPRJMOD}/digikey-symbols/dk_Addressable-Specialty.lib)(options "")(descr ""))
   (lib (name dk_Alarms-Buzzers-and-Sirens)(type Legacy)(uri ${KIPRJMOD}/digikey-symbols/dk_Alarms-Buzzers-and-Sirens.lib)(options "")(descr ""))
   (lib (name dk_Automotive-Relays)(type Legacy)(uri ${KIPRJMOD}/digikey-symbols/dk_Automotive-Relays.lib)(options "")(descr ""))

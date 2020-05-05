@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 1 4
 Title ""
 Date ""
 Rev ""
@@ -24,12 +24,6 @@ S 1500 1000 1000 1000
 U 5E5DA87F
 F0 "ESP32" 50
 F1 "ESP32.sch" 50
-$EndSheet
-$Sheet
-S 1500 2500 1000 1000
-U 5E5F97D9
-F0 "USB" 50
-F1 "USB.sch" 50
 $EndSheet
 $Sheet
 S 3000 2500 1000 1000

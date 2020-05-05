@@ -11,7 +11,7 @@
     (via_costs 50)
     (plane_via_costs 5)
     (start_ripup_costs 100)
-    (start_pass_no 3841)
+    (start_pass_no 1746)
     (layer_rule F.Cu
       (active on)
       (preferred_direction vertical)
@@ -63,17 +63,14 @@
     )
   )
   (class "kicad_default"
-    GND /Power/VBat 3v3 "Net-(C5-Pad2)" /USB/VBUS "Net-(D1-Pad1)" SCK MOSI
-    MISO "Net-(J3-Pad4)" "Net-(J3-Pad3)" "Net-(J3-Pad2)" "/ESP32/UART_RX" "/ESP32/UART_TX" /ESP32/Throttle /ESP32/ExtraCS3
-    /ESP32/ExtraCS2 /ESP32/ExtraCS1 "/ESP32/NFC_CS" "Net-(J7-Pad3)" "Net-(J7-Pad4)" "Net-(J7-Pad2)" "Net-(J8-Pad5)" "Net-(J8-Pad4)"
-    "Net-(J8-Pad3)" "Net-(J8-Pad2)" "Net-(J9-Pad5)" "Net-(J9-Pad4)" "Net-(J9-Pad3)" "Net-(J9-Pad2)" "Net-(J10-Pad5)" "Net-(J10-Pad4)"
-    "Net-(J10-Pad3)" "Net-(J10-Pad2)" "Net-(J11-Pad5)" "Net-(J11-Pad4)" "Net-(J11-Pad3)" "Net-(J11-Pad2)" DTR "Net-(MOD1-Pad26)"
-    "Net-(MOD1-Pad32)" "Net-(MOD1-Pad33)" RXD TXD "Net-(MOD1-Pad36)" "Net-(MOD1-Pad14)" "Net-(MOD1-Pad12)" "Net-(MOD1-Pad11)"
-    "Net-(MOD1-Pad10)" IOExpanderCS "Net-(MOD1-Pad7)" "Net-(MOD1-Pad5)" "Net-(MOD1-Pad4)" RTS "Net-(MOD1-Pad24)" "Net-(MOD1-Pad23)"
-    "Net-(MOD1-Pad22)" "Net-(MOD1-Pad21)" "Net-(MOD1-Pad20)" "Net-(MOD1-Pad19)" "Net-(MOD1-Pad18)" "Net-(MOD1-Pad17)" "Net-(R4-Pad2)" "Net-(U2-Pad29)"
-    "Net-(U2-Pad28)" "Net-(U2-Pad27)" "Net-(U2-Pad26)" "Net-(U2-Pad25)" "Net-(U2-Pad23)" "Net-(U2-Pad22)" "Net-(U2-Pad21)" "Net-(U2-Pad13)"
-    "Net-(U2-Pad12)" "Net-(U2-Pad11)" "Net-(U2-Pad10)" "Net-(U2-Pad9)" "Net-(U2-Pad8)" "Net-(U2-Pad7)" "Net-(U2-Pad6)" "Net-(U2-Pad5)"
-    "Net-(U2-Pad3)" "Net-(U2-Pad33)" "Net-(U3-Pad20)" "Net-(U3-Pad19)"
+    GND /Power/VBat 3v3 "Net-(D1-Pad1)" SCK MOSI MISO "Net-(J3-Pad4)"
+    "Net-(J3-Pad3)" "Net-(J3-Pad2)" "/ESP32/UART_RX" "/ESP32/UART_TX" /ESP32/Throttle /ESP32/ExtraCS3 /ESP32/ExtraCS2 /ESP32/ExtraCS1
+    "/ESP32/NFC_CS" "Net-(J8-Pad5)" "Net-(J8-Pad4)" "Net-(J8-Pad3)" "Net-(J8-Pad2)" "Net-(J9-Pad5)" "Net-(J9-Pad4)" "Net-(J9-Pad3)"
+    "Net-(J9-Pad2)" "Net-(J10-Pad5)" "Net-(J10-Pad4)" "Net-(J10-Pad3)" "Net-(J10-Pad2)" "Net-(J11-Pad5)" "Net-(J11-Pad4)" "Net-(J11-Pad3)"
+    "Net-(J11-Pad2)" "Net-(MOD1-Pad26)" "Net-(MOD1-Pad32)" "Net-(MOD1-Pad33)" "Net-(MOD1-Pad36)" "Net-(MOD1-Pad14)" "Net-(MOD1-Pad12)" "Net-(MOD1-Pad11)"
+    "Net-(MOD1-Pad10)" IOExpanderCS "Net-(MOD1-Pad7)" "Net-(MOD1-Pad5)" "Net-(MOD1-Pad4)" "Net-(MOD1-Pad24)" "Net-(MOD1-Pad23)" "Net-(MOD1-Pad22)"
+    "Net-(MOD1-Pad21)" "Net-(MOD1-Pad20)" "Net-(MOD1-Pad19)" "Net-(MOD1-Pad18)" "Net-(MOD1-Pad17)" "Net-(U3-Pad20)" "Net-(U3-Pad19)" /ESP32/BOOT
+    /ESP32/RXD /ESP32/TXD "Net-(MOD1-Pad3)"
     (clearance_class "kicad_default")
     (via_rule kicad_default)
     (rule

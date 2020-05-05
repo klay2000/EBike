@@ -18,16 +18,19 @@ Drive* Drive::getInstance(){
 }
 
 float Drive::getAmps(){
-  return ESC.data.avgInputCurrent;
+  if(ESC.getVescValues())
+    return ESC.data.avgInputCurrent;
 }
 
 
 float Drive::getVolts(){
-  return ESC.data.inpVoltage;
+  if(ESC.getVescValues())
+    return ESC.data.inpVoltage;
 }
 
 long Drive::getRPM(){
-  return ESC.data.rpm;
+  if(ESC.getVescValues())
+    return ESC.data.rpm;
 }
 
 void Drive::setAmps(float a){
