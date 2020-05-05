@@ -7,12 +7,13 @@ class Controls{
 
   private:
     const int THROTTLE_PIN = 34;
-    //key pin needs switch to ioexpander
-    const int KEY_PIN = -1;
-    const int HEADLIGHT_PIN = -1; //placeholder
+    
+    //on ioexpander
+    const int KEY_PIN = 0;
+    const int HEADLIGHT_PIN = 1;
 
-    const int THROTTLE_MIN = 1090;
-    const int THROTTLE_MAX = 3200;
+    const int THROTTLE_MIN = 950;
+    const int THROTTLE_MAX = 3000;
 
     const float THROTTLE_DEADBAND = 0.05f;
 
