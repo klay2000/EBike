@@ -10,8 +10,8 @@
 // }
 
 const char* OTATask::host = "esp32";
-const char* OTATask::ssid = "your-ssid";
-const char* OTATask::password = "your-password";
+const char* OTATask::ssid = "CISCO_LONGRANGE";
+const char* OTATask::password = "wxyzks896";
 
 WebServer OTATask::server = {80};
 

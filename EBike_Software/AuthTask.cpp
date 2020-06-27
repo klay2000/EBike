@@ -3,7 +3,7 @@
 #include "Controls.h"
 #include "CardReader.h"
 
-String AuthTask::cardUID = "your-UID";
+String AuthTask::cardUID = "99f6fcb9";
 
 bool AuthTask::cardAuth = false;
 
