@@ -24,7 +24,8 @@ static void testTaskStart(void*){
 static void testTask(void*)
 {
   
-  bt->debugPrintln(String(d->getRPM()));
+//  bt->debugPrintln(String(d->getVolts()));
+  l->setRed(1000);
 
 }
 

@@ -1,13 +1,20 @@
 #include "Drive.h"
 #include "Controls.h"
 #include <VescUart.h>
+#include <Arduino.h>
+#include "Bluetooth.h"
 
 Drive* Drive::instance;
 
 Drive::Drive(){
-  Serial2.begin(115200);
-  
-  ESC.setSerialPort(&Serial2);
+  Serial1.begin(9600);
+
+   
+  ESC.setSerialPort(&Serial1);
+
+//temporary ppm
+  ledcAttachPin(17, 4);
+  ledcSetup(4, 50, 10);
 }
 
 Drive* Drive::getInstance(){
@@ -35,4 +42,8 @@ long Drive::getRPM(){
 
 void Drive::setAmps(float a){
   ESC.setCurrent(constrain(a, 0, MAX_CURRENT));
+  //temporary ppm
+  ledcWrite(4, constrain((a/MAX_CURRENT)*1023, 10, 1000)); 
+  Bluetooth::getInstance()->debugPrintln(String(ledcReadFreq(4)));
+  Bluetooth::getInstance()->debugPrintln(String(ledcRead(4)));
 }
