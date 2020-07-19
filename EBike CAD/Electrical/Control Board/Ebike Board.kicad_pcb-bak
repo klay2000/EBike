@@ -822,7 +822,7 @@
     (at 136.7 85.7)
     (path /5E5DA87F/5E5EAEA2)
     (attr smd)
-    (fp_text reference MOD1 (at -11.9 -0.7 90) (layer F.SilkS)
+    (fp_text reference MOD1 (at 10.9 2.2 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value ESP32-WROOM-32 (at 0 11.88) (layer F.Fab)
@@ -1244,7 +1244,7 @@
   )
 
   (module Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical (layer F.Cu) (tedit 59FED5CC) (tstamp 5EB14849)
-    (at 151.4 71.5 270)
+    (at 151.44 71.2 270)
     (descr "Through hole straight pin header, 1x02, 2.54mm pitch, single row")
     (tags "Through hole pin header THT 1x02 2.54mm single row")
     (path /5E5DA87F/5EB35BA4)
@@ -1356,7 +1356,7 @@
   )
 
   (module Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical (layer F.Cu) (tedit 59FED5CC) (tstamp 5EB15825)
-    (at 154 77.6)
+    (at 159 79.42)
     (descr "Through hole straight pin header, 1x04, 2.54mm pitch, single row")
     (tags "Through hole pin header THT 1x04 2.54mm single row")
     (path /5E5DA87F/5EB4447C)
