@@ -7,14 +7,15 @@
 Drive* Drive::instance;
 
 Drive::Drive(){
-  Serial1.begin(9600);
-
+  Serial1.begin(115200);
+  while(!Serial1);
    
   ESC.setSerialPort(&Serial1);
+  ESC.setDebugPort(&Serial);
 
 //temporary ppm
-  ledcAttachPin(17, 4);
-  ledcSetup(4, 50, 10);
+//  ledcAttachPin(17, 4);
+//  ledcSetup(4, 50, 10);
 }
 
 Drive* Drive::getInstance(){
@@ -25,25 +26,25 @@ Drive* Drive::getInstance(){
 }
 
 float Drive::getAmps(){
-  if(ESC.getVescValues())
+//  if(ESC.getVescValues())
     return ESC.data.avgInputCurrent;
 }
 
 
 float Drive::getVolts(){
-  if(ESC.getVescValues())
+  if(ESC.getVescValues());
     return ESC.data.inpVoltage;
 }
 
 long Drive::getRPM(){
-  if(ESC.getVescValues())
+//  if(ESC.getVescValues());
     return ESC.data.rpm;
 }
 
 void Drive::setAmps(float a){
   ESC.setCurrent(constrain(a, 0, MAX_CURRENT));
   //temporary ppm
-  ledcWrite(4, constrain((a/MAX_CURRENT)*1023, 10, 1000)); 
-  Bluetooth::getInstance()->debugPrintln(String(ledcReadFreq(4)));
-  Bluetooth::getInstance()->debugPrintln(String(ledcRead(4)));
+//  ledcWrite(4, constrain((a/MAX_CURRENT)*1023, 10, 1000)); 
+  Bluetooth::getInstance()->debugPrintln(String(getVolts()));
+//  Bluetooth::getInstance()->debugPrintln(String(ledcRead(4)));
 }

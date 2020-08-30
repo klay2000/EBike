@@ -332,7 +332,7 @@ U 1 1 5EB4447C
 P 6800 900
 F 0 "J7" H 6712 862 50  0000 R CNN
 F 1 "0022232041" H 6712 953 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 7000 1100 60  0001 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 7000 1100 60  0001 L CNN
 F 3 "https://www.molex.com/pdm_docs/sd/022232041_sd.pdf" H 7000 1200 60  0001 L CNN
 F 4 "WM4202-ND" H 7000 1300 60  0001 L CNN "Digi-Key_PN"
 F 5 "0022232041" H 7000 1400 60  0001 L CNN "MPN"
@@ -381,4 +381,36 @@ Wire Wire Line
 	5100 3250 5350 3250
 Wire Wire Line
 	5350 3150 5100 3150
+Text GLabel 3700 3650 0    50   Input ~ 0
+SDA
+Text GLabel 3700 3750 0    50   Input ~ 0
+SCL
+$Comp
+L Connector:Conn_01x04_Female J?
+U 1 1 5F0A362F
+P 1700 1400
+F 0 "J?" V 1638 1112 50  0000 R CNN
+F 1 "Conn_01x04_Female" V 1547 1112 50  0000 R CNN
+F 2 "Connector_JST:JST_XH_B4B-XH-AM_1x04_P2.50mm_Vertical" H 1700 1400 50  0001 C CNN
+F 3 "~" H 1700 1400 50  0001 C CNN
+	1    1700 1400
+	0    -1   -1   0   
+$EndComp
+Text GLabel 1600 1600 3    50   Input ~ 0
+SDA
+Text GLabel 1700 1600 3    50   Input ~ 0
+SCL
+Text GLabel 1800 1600 3    50   Input ~ 0
+3v3
+$Comp
+L power:GND #PWR?
+U 1 1 5F0A4397
+P 1900 1600
+F 0 "#PWR?" H 1900 1350 50  0001 C CNN
+F 1 "GND" H 1905 1427 50  0000 C CNN
+F 2 "" H 1900 1600 50  0001 C CNN
+F 3 "" H 1900 1600 50  0001 C CNN
+	1    1900 1600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
